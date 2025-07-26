@@ -1,8 +1,6 @@
 # SPM based smoothing function
 
  Ported spm_smooth into Python3!
- 
- Credit goes to the SPM team for their design.
 
  WHY? scipy has a gaussian smooth implementation which works well but that implementation is different, it does not use 1st degree B-spline interpolation. When I discovered the difference, I could not find python implementations so I ported the matlab ode. 
 

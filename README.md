@@ -7,8 +7,6 @@
  WHY? scipy has a gaussian smooth implementation which works well but that implementation is different, it does not use 1st degree B-spline interpolation. When I discovered the difference, I could not find python implementations so I ported the matlab ode. 
 
  Identical to SPM12 spm_smooth as of 10-21-2021 except the addition of edge-preservation option and you can return the nibabel image rather than having to save the output to a file.
-
- Method for edge preservation inspired by https://stackoverflow.com/a/36307291/7128154
  
  Quoting the author of the edge preservation method: 
  
@@ -18,6 +16,7 @@
  
 > The idea is that replacing the NaNs by zeros introduces an error in the filtered array which can, however, be compensated by applying the same Gaussian filter to another auxiliary array and combining the two. '''
 
+Source: https://stackoverflow.com/a/36307291/7128154
 
  This implementation preserves detail around the edges of an image. There are valid reasons to criticize the method, so only use edge preservation if you can explain why you are using it. 
 
